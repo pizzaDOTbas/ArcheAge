@@ -1,0 +1,15 @@
+$objWindows = Get-Process | Where-Object {$_.MainWindowTitle -ne ""} | Select-Object MainWindowTitle
+foreach($objWindow in $objWindows){
+    if($objWindow.MainWindowTitle.Contains("ArcheAge")){
+       $archeBaby = $objWindow.MainWindowTitle
+       for($i=0; $i -le 69420;$i++){
+       $myWait = get-random -Minimum 0 -Maximum 42000000000000
+       $arrCommands = "1","{UP}","{DOWN}"
+       $myCommand = $arrCommands[(get-random -minimum 0 -maximum ($arrCommands.Count))]
+       [void] [System.Reflection.Assembly]::LoadWithPartialName("'Microsoft.VisualBasic")
+       [Microsoft.VisualBasic.Interaction]::AppActivate($archeBaby)
+       [void] [System.Reflection.Assembly]::LoadWithPartialName("'System.Windows.Forms")
+       [System.Windows.Forms.SendKeys]::SendWait($myCommand)
+       }
+    }
+}
